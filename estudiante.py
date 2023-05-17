@@ -33,6 +33,27 @@ def abrir_toplevel_estudiante():
     entry_c.place(x=210,y=60)
 
    # boton para convertir
+def abrir_toplevel_masCorporal():
+    global toplevel_corporal
+    toplevel_corporal = Toplevel()
+    toplevel_corporal.title("masCorporal")
+    toplevel_corporal.resizable(False, False)
+    toplevel_corporal.geometry("300x200")
+    toplevel_corporal.config(bg="white")
+
+# logo de la app
+
+# etiqueta para valor en centigrados
+
+lb_c = Label(toplevel_corporal, text = "masCorporal")
+lb_c.config(bg="white", fg="blue", font=("Helvetica", 18))
+lb_c.place(x=130, y=40)
+
+# caja de texto para valor en centigrados
+entry_c = Entry(toplevel_corporal, textvariable=toplevel_corporal)
+entry_c.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
+entry_c.focus_set()
+entry_c.place(x=210,y=60)
 
 
 # aceptar
@@ -99,23 +120,10 @@ titulo.place(x=240,y=10)
 
 bt_centigrados = Button(frame_entrada, text="Ingresar dato estudiante", command=abrir_toplevel_estudiante)
 bt_centigrados.place(x=240, y=60)
+bt_centigrados = Button(toplevel_corporal, text="masCorporal", command=abrir_toplevel_masCorporal)
+bt_centigrados.place(x=240, y=60)
 
 
-def abrir_toplevel_estudiante():
-    global toplevel_corporal
-    toplevel_corporal = Toplevel()
-    toplevel_corporal("Estudiante")
-    toplevel_corporal.resizable(False, False)
-    toplevel_corporal.geometry("300x200")
-    toplevel_corporal.config(bg="white")
-lb_c = Label(toplevel_corporal, text = "masa corporal")
-lb_c.config(bg="white", fg="blue", font=("Helvetica", 18))
-lb_c.place(x=130, y=40)
-
-entry_c = Entry(toplevel_estudiante, textvariable=toplevel_corporal)
-entry_c.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
-entry_c.focus_set()
-entry_c.place(x=210,y=60)
   
 
     # etiqueta para valor en centigrados
